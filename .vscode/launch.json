@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "IRCTC",
+            "request": "launch",
+            "mainClass": "IRCTC",
+            "projectName": "Intern-2025_74c43d04"
+        },
+        {
+            "type": "java",
+            "name": "MaidenOver",
+            "request": "launch",
+            "mainClass": "MaidenOver",
+            "projectName": "Intern-2025_74c43d04"
+        },
+        {
+            "type": "java",
             "name": "LeastDeposit",
             "request": "launch",
             "mainClass": "LeastDeposit",
