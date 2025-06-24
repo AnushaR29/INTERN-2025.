@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SortOddEven",
+            "request": "launch",
+            "mainClass": "SortOddEven",
+            "projectName": "Intern-2025_74c43d04"
+        },
+        {
+            "type": "java",
+            "name": "MaxRecursion",
+            "request": "launch",
+            "mainClass": "MaxRecursion",
+            "projectName": "Intern-2025_74c43d04"
+        },
+        {
+            "type": "java",
+            "name": "Fibonacci",
+            "request": "launch",
+            "mainClass": "Fibonacci",
+            "projectName": "Intern-2025_74c43d04"
+        },
+        {
+            "type": "java",
+            "name": "ClimbingStairs",
+            "request": "launch",
+            "mainClass": "ClimbingStairs",
+            "projectName": "Intern-2025_74c43d04"
+        },
+        {
+            "type": "java",
             "name": "IRCTC",
             "request": "launch",
             "mainClass": "IRCTC",
