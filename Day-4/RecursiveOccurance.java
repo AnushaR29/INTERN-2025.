@@ -12,7 +12,7 @@ public class RecursiveOccurance {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arr = {0, 1, 5, 0, 7, 2, 1};
-        System.out.println("Enter the nu,ber to find occurance");
+        System.out.println("Enter the number to find occurance");
         System.out.println(findCount(arr, 0,scanner.nextInt()));
         scanner.close();
     }
