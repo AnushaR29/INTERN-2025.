@@ -187,3 +187,204 @@ Explanation: There are 5 inversion pairs in the array:
 (30, 20) where 30 > 20 and 
 (60, 20) where 60 > 20 and 
 (25, 20) where 25 > 20
+
+day 6:
+1. Find the ranking of your skill set in google trends ranking of 10 demanded trends such as [Java developer, cloud architect, data analyst, devops engineer ,full stack developer, network associate] using binary search
+Example:
+Input: data analyst
+Output: 3
+Input: Devops engineer
+Output: -1
+Input: full stack developer
+Output: 5
+
+2. Given two strings A and B, find if A is a subsequence of B.
+Example 1:
+Input:
+A = TCS
+B = Tata Service
+Output: 0
+Explanation: A is not a subsequence of B
+as 'C' appears after 'S'
+
+Example 2:
+Input:
+A = sdm
+B = sridharmashthlamanjunath
+Output: 1
+Explanation: A is a subsequence of B.
+
+Example 3:
+Input:
+A = sdmit
+B = sridharmashthlainstitute
+Output: 0
+Explanation: A is not a subsequence of B.
+
+3. Minimum Moves to Convert String
+You are given a string s consisting of n characters which are either 'X' or 'O'.
+A move is defined as selecting three consecutive characters of s and converting them to 'O'. Note that if a move is applied to the character 'O', it will stay the same.
+Return the minimum number of moves required so that all the characters of s are converted to 'O'.
+Example 1:
+Input: s = "XXX"
+Output: 1	
+Explanation: XXX -> OOO
+We select all the 3 characters and convert them in one move.
+Example 2:
+Input: s = "XXOX"
+Output: 2
+Explanation: XXOX -> OOOX -> OOOO
+We select the first 3 characters in the first move, and convert them to 'O'.
+Then we select the last 3 characters and convert them so that the final string contains all 'O's.
+Example 3:
+Input: s = "OOOO"
+Output: 0
+Explanation: There are no 'X's in s to convert.
+
+4. Twisted prime
+Note: A number is called Twisted Prime if it is a prime and its reverse is also a prime.
+Example 1:
+Input: N = 97
+Output: 1
+Explanation: 97 is a prime number. Its 
+reverse 79 is also a prime number. Thus 
+97 is a  twisted Prime and so, the answer is 1.
+Example 2:
+Input: N = 43
+Output: 0
+Explanation: 43 is a prime number but its 
+reverse 34 is not a prime.So, 43 is not a 
+twisted prime and thus, answer is 0.
+
+
+day 7:
+1. Consider the following array is account balance of last 7 transactions, find the period of time (subSum) where the max amount kept in the account.
+(max sub array where sum is max)
+eg:
+Input: 2, -4, 1, 9, -6, 7, -3
+output: 11
+Input: 2, -4, 1, 9, -6, -3
+Output: 10
+0   1   2  3   4  5  6
+2, -4, 1, 9, -6, 7, -3
+
+0  1 2 3
+2,-4,1,9
+0   1
+2, -4
+ls>>2, rs>>-4, cs>>-2
+
+2,3
+1,9
+ls>>1, rs>>9, cs>> 10
+
+backtrack:
+0 to 3
+0 1  2 3  >> s>>0,m>>1,e>>3
+2,-4,1,9
+
+ls>>m to s >> total>=ls >> ls=total
+       1 to 0  >> -2    >> ls
+rs>> m+1 to e >> total>rs >> rs=total
+	2 to 3 >> 10   >> rs
+cs >> -2+10>> 8
+
+
+divide
+4, 5, 6
+-6,7,-3
+
+4, 5
+-6,7
+
+ls>>-6, rs>>7, cs>>1
+
+backtrack:
+4 to 6
+
+4, 5, 6
+-6,7,-3
+
+ls>>m to s >> total>=ls >> ls=total
+       5 to 4 >> 1>>ls
+rs>> m+1 to e >> total>rs >> rs=total
+	6		>> -3
+cs>> -2
+
+backtrack:
+0 to 6
+
+ls>>m to s >> total>=ls >> ls=total
+       3  to 0  >> 10>> ls
+rs>> m+1 to e >> total>rs >> rs=total
+        4     to 6 >> 1>>rs
+
+cs>> 11
+
+2. You are working on a vending machine software that dispenses change. Given an unlimited supply of currencies of different denominations (e.g., 100, 200, 500 etc.), you need to write a program to determine the minimum number of currencies required to make a given amount x. The program should accept the amount x and the list of denominations as input and output the minimum number of coins needed.
+Input
+coins = [100, 200, 500]  , amount = 1100
+Output
+3
+amount = 8700
+Output:
+18
+
+
+day 8:
+
+dynamic programming:
+additional space always required
+
+1. Climbing stairs using dynamic programming
+eg:
+5
+
+arr>> size = 6>> 0 to 5(always answer)
+
+2. factorial via DP
+3. coin change via DP
+
+
+day 9:
+1. Imagine you are a software engineer working on a document editing application. The application allows users to edit and correct typos in their documents. One of the features you are developing is a tool to calculate the minimum number of operations required to transform one word into another. This feature is crucial for suggesting the most efficient edits and corrections to the users.
+Task: Given two words, implement a function that calculates the minimum number of operations required to convert the first word into the second word. The allowed operations are:
+Insert a character
+Delete a character
+Replace a character
+
+Input:
+Two strings word1 and word2 representing the original word and the target word, respectively.
+Output:
+An integer representing the minimum number of operations required to convert word1 into word2.
+
+Example:
+Input: word1 = "horse", word2 = "rose"
+Output: 2
+Explanation:
+To transform "horse" into "rose", the following 2 operations are required:
+  1. Replace 'h' with 'r' -> "rorse"
+  2. Delete 'r' -> "rose"
+
+horse
+ros
+h>> remove
+o>> r
+r>> o
+e>> remove
+
+h>> r
+r>> remove
+e>> remove
+
+2. selection sort
+3. quick sort
+4. Given an array of stock prices where each element represents the stock price on a specific day, write a function to find the best days to buy and sell the stock such that you achieve the maximum profit. You can only buy and sell the stock once.
+45, 12, 3, 10, 50
+Best time to buy 3 best time to sell 50
+
+-10, -5, -2, -1, 1
+Best time to buy -10 best time to sell 1
+
+90, 40, 20, 10, 4
+Best time to buy 10 best time to sell 4
